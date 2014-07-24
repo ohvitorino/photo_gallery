@@ -1,0 +1,8 @@
+14/07/14 Jul:07:1405342141 | ADMIN: Log was cleared.
+16/07/14 Jul:07:1405498025 | Login: brunop logged in.
+16/07/14 Jul:07:1405498255 | Login: brunop logged in.
+16/07/14 Jul:07:1405499044 | Login: brunop logged in.
+16/07/14 Jul:07:1405517083 | Login: brunop logged in.
+22/07/14 Jul:07:1406035225 | Login: brunop logged in.
+23/07/14 Jul:07:1406105435 | Login: brunop logged in.
+23/07/14 Jul:07:1406112545 | Login: brunop logged in.

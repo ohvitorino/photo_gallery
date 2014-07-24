@@ -1,6 +1,6 @@
 <?php 
 
-require_once("config.php");
+require_once(LIB_PATH.DS."config.php");
 
 /**
 * 
@@ -110,5 +110,3 @@ class MySQLDatabase
 
 $database = new MySQLDatabase();
 $db =& $database;
-
-?>

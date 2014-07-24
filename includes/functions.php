@@ -24,4 +24,47 @@ function output_message($message='')
     return "";
   }
 }
-?>
+
+// The Auto Load magic!
+function __autoload($class_name)
+{
+  $class_name = strtolower($class_name);
+  $path = LIB_PATH.DS."/{$class_name}.php";
+  if (file_exists($path)) {
+    require_once($path);
+  } else {
+    die("The file {$class_name}.php could not be found.");
+  }
+}
+
+
+function include_layout_template($template='')
+{
+  include(SITE_ROOT.DS.'public'.DS.'layouts'.DS.$template);
+}
+
+function log_action($action, $message="")
+{
+  $new = file_exists(LOG_FILE) ? true : false;
+  $handle = fopen(LOG_FILE, 'a');
+
+  if ($handle) {
+    $time = strftime("%d/%m/%y %h:%m:%s", time());
+    $content = "{$time} | {$action}: ${message}\n";
+    fwrite($handle, $content);
+    fclose($handle);
+    if ($new) {
+      chmod(LOG_FILE, 0755);
+    }
+
+  } else {
+    echo "Could not write to log file.";
+
+  }
+}
+
+function datetime_to_text($datetime='')
+{
+  $unixdatetime = strtotime($datetime);
+  return strftime("%B %d, %Y at %I:%M:%p", $unixdatetime);
+}
